@@ -33,11 +33,12 @@ export default function RootLayout({
         />
       </head>
      
-      <HeaderModel/>
+
      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+         <HeaderModel/>
         <div className="bg-[#0a0e13] min-h-screen relative overflow-hidden">
           
           {/* Gradiente azul topo esquerdo */}

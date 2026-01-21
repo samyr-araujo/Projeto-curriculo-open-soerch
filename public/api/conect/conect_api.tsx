@@ -2,10 +2,10 @@ import axios from "axios"
 import { useState } from "react"
 
 const app = axios.create({
-  baseURL: "http://localhost:3333",
+  baseURL:  process.env.API_URL,
   withCredentials: true,
   headers: {
-    Authorization: "ad7f6975583e707aa312b9e0b0d34d8848b0a320aa3597789639f1c2c2cccefc",
+    Authorization: process.env.ACESS_KEY, //token static acess...
   },
 })
 
