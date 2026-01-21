@@ -2,6 +2,29 @@ import TextType from "@/components/TextType";
 import { CardContact } from "./card_context";
 import LoGOTIP from "./avatar";
 import HeaderModel from "./header";
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Meu portifolio - Samyr Araujo",
+  description: "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
+  openGraph: {
+    title: "Meu portifolio - Samyr Araujo",
+    description: "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
+  
+    siteName: "Samyr Portifolio",
+    images: [
+      {
+        url: "https://minhaloja.com/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview da portifolio de Samyr Araujo",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+}
+
 
 export default function HomePage() {
   return (
