@@ -51,26 +51,27 @@ export const ContactForm = () => {
     >
         
     </InputGroupInput>
-    {errors.name_user && <FieldError className="text-red-500">{errors.name_user.message}</FieldError>}
+   
            </InputGroup>
-
+           {errors.name_user && <FieldError className="text-red-500">{errors.name_user.message}</FieldError>}
             <InputGroup className="  border border-blue-400 rounded-md  w-full  focus-ring-blue-400 text-white" >
     <InputGroupInput className="h-12 text-base" placeholder="Digite seu email"
     {...register("email")}
     >
        
     </InputGroupInput>
-     {errors.email && <FieldError className="text-red-500">{errors.email.message}</FieldError>}
+    
            </InputGroup> 
+            {errors.email && <FieldError className="text-red-500">{errors.email.message}</FieldError>}
             <InputGroup className=" border border-blue-400 rounded-md focus-ring-blue-400 text-white " >
     <InputGroupTextarea className=" h-[120px]  text-base" placeholder="Digite sua mensagem"
     {...register("content")}
     >
       
     </InputGroupTextarea>
-      {errors.content && <FieldError className="text-red-500">{errors.content.message}</FieldError>}
+      
            </InputGroup>
-
+          {errors.content && <FieldError className="text-red-500">{errors.content.message}</FieldError>}
            <Button type="submit" disabled={isSubmitting} className=" w-full border border-blue-500 bg-transparent hover:bg-blue-600 text-blue-500 hover:text-white cursor-pointer  font-semibold py-2 px-4 rounded-md mx-auto">
             {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
            </Button>
