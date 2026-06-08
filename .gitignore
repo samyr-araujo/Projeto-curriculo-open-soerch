@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# deploy
+deploy.zip
+ecr-push.sh
+*.zip
+
+# os files
+.DS_Store
+Thumbs.db
+
+# editor
+.vscode/
+.idea/

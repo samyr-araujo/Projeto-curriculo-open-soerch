@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Meu portifolio - Samyr Araujo",
+  title: "Samyr Araujo - Full Stack Developer",
   description: "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
 };
 
@@ -24,33 +24,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-
+    <html lang="pt-BR" className="dark">
       <head>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
         />
       </head>
-     
-
-     
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0e13] text-white`}
       >
-         <HeaderModel/>
-        <div className="bg-[#0a0e13] min-h-screen relative overflow-hidden">
-          
-          {/* Gradiente azul topo esquerdo */}
-          <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <HeaderModel />
+        <div className="relative min-h-screen overflow-hidden">
+          {/* Gradient orbs */}
+          <div className="pointer-events-none absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-blue-600/8 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-40 -right-40 h-[500px] w-[500px] rounded-full bg-cyan-500/5 blur-3xl" />
+          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[800px] w-[800px] rounded-full bg-blue-500/3 blur-3xl" />
 
-          {/* Gradiente azul inferior direito */}
-          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" />
-      <main className="relative z-10">
-        {children}
-      </main>
-
-
+          <main className="relative z-10">
+            {children}
+          </main>
         </div>
       </body>
     </html>

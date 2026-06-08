@@ -1,74 +1,63 @@
-import { Card, CardContent } from "@/components/ui/card";
+'use client';
+
+import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function CardContact() {
   return (
-    <div className="flex flex-col md:flex-row gap-4 w-full ">
-      {/* Download */}
+    <motion.div
+      className="flex flex-wrap items-center gap-3"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8, duration: 0.5 }}
+    >
+      {/* Download CV */}
       <a
         href="/curriculo.pdf"
         download="Samyr_Araujo_Curriculo_FullStack.pdf"
-        className="
-          flex items-center justify-center
-          w-full md:w-auto
-          px-6
-          h-14 md:h-12
-          border border-blue-400
-          text-blue-500
-          hover:bg-blue-500 hover:text-white
-          rounded-sm
-          transition
-        "
+        className="group relative inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-500 rounded-lg transition-all hover:shadow-lg hover:shadow-blue-500/25 overflow-hidden"
       >
-        Download CV
+        <span className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+        <Download size={16} className="relative z-10" />
+        <span className="relative z-10">Download CV</span>
       </a>
 
       {/* GitHub */}
-      <a
+      <motion.a
         href="https://github.com/samyr-araujo"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full md:w-auto"
+        className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 bg-white/5 text-zinc-400 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all"
+        aria-label="GitHub"
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <Card
-          className="
-            flex items-center justify-center
-            w-full md:w-12
-            h-14 md:h-12
-            bg-gray-800 hover:bg-gray-700
-            rounded-sm
-            border-none
-            transition hover:scale-105
-          "
-        >
-          <CardContent className="p-0">
-            <i className="devicon-github-original text-xl"></i>
-          </CardContent>
-        </Card>
-      </a>
+        <Github size={18} />
+      </motion.a>
 
       {/* LinkedIn */}
-      <a
+      <motion.a
         href="https://www.linkedin.com/in/samyr-araujo-do-vale-7b4b621b4/"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full md:w-auto"
+        className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 bg-white/5 text-zinc-400 hover:text-blue-400 hover:border-blue-400/30 hover:bg-blue-400/10 transition-all"
+        aria-label="LinkedIn"
+        whileHover={{ scale: 1.1, rotate: -5 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <Card
-          className="
-            flex items-center justify-center
-            w-full md:w-12
-            h-14 md:h-12
-            bg-blue-700 hover:bg-blue-600
-            rounded-sm
-            border-none
-            transition hover:scale-105
-          "
-        >
-          <CardContent className="p-0">
-            <i className="devicon-linkedin-plain text-white text-xl"></i>
-          </CardContent>
-        </Card>
-      </a>
-    </div>
+        <Linkedin size={18} />
+      </motion.a>
+
+      {/* Email */}
+      <motion.a
+        href="mailto:samyraraujo46@gmail.com"
+        className="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-white/10 bg-white/5 text-zinc-400 hover:text-green-400 hover:border-green-400/30 hover:bg-green-400/10 transition-all"
+        aria-label="Email"
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <Mail size={18} />
+      </motion.a>
+    </motion.div>
   );
 }

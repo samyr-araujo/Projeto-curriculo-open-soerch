@@ -1,97 +1,80 @@
 import TextType from "@/components/TextType";
 import { CardContact } from "./card_context";
 import LoGOTIP from "./avatar";
-import HeaderModel from "./header";
-import type { Metadata } from "next"
+import type { Metadata } from "next";
+import { AnimatedSection } from "@/components/animated-section";
 
 export const metadata: Metadata = {
-  title: "Meu portifolio - Samyr Araujo",
-  description: "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
+  title: "Samyr Araujo - Full Stack Developer",
+  description:
+    "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
   openGraph: {
-    title: "Meu portifolio - Samyr Araujo",
-    description: "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
-  
-    siteName: "Samyr Portifolio",
-    images: [
-      {
-        url: "https://minhaloja.com/preview.png",
-        width: 1200,
-        height: 630,
-        alt: "Preview da portifolio de Samyr Araujo",
-      },
-    ],
+    title: "Samyr Araujo - Full Stack Developer",
+    description:
+      "Me conheça melhor, veja meus projetos e habilidades como desenvolvedor.",
+    siteName: "Samyr Portfolio",
     locale: "pt_BR",
     type: "website",
   },
-}
-
+};
 
 export default function HomePage() {
   return (
-     <>
-     
-    <main>
-      {/* Fundo escuro com gradiente AZUL */}
-      <div className="bg-[#0a0e13] min-h-screen flex items-center relative overflow-hidden">
-        
-        {/* Gradiente AZUL no canto superior esquerdo */}
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
-        
-        {/* Gradiente AZUL adicional no canto inferior direito (opcional) */}
-        <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl" />
-        
-        {/* Container geral */}
-        <div className="flex  flex-col  md:flex-row w-full items-center mt-5 md:justify-between max-w-7xl px-16 mx-auto relative z-10 gap-20">
-          
-          {/* Coluna esquerda */}
-          <div className="flex flex-col  text-white space-y-3 max-w-2xl  order-2  mb-10 md:order-1 ">
-            
-            {/* console.log em AZUL */}
-            <p className="text-blue-400 font-mono text-lg mb-2">
-              console.log("Olá mundo! sou")
+    <section className="flex min-h-[calc(100vh-4rem)] items-center py-16">
+      <div className="mx-auto flex w-full max-w-7xl flex-col-reverse items-center gap-12 px-6 md:flex-row md:justify-between lg:gap-20">
+        {/* Text content */}
+        <AnimatedSection direction="left" className="flex flex-col space-y-6 max-w-2xl text-center md:text-left">
+          <div className="space-y-2">
+            <p className="text-blue-400 font-mono text-sm tracking-wide animate-pulse">
+              console.log(&quot;Olá mundo! sou&quot;)
             </p>
-            
-        
-            <h1 className="  text-3xl md:text-7xl font-bold leading-tight">
+            <h1 className="text-4xl font-bold leading-tight md:text-6xl lg:text-7xl bg-gradient-to-r from-white via-blue-100 to-blue-400 bg-clip-text text-transparent">
               Samyr Araujo
             </h1>
-
-            {/* Subtítulo com > */}
-            <div className="text-xl text-gray-300">
-              <TextType
-                text={[
-                  "> Node.js..",
-                  "> React..",
-                  "> Next.js..",
-                  "> Full Stack Developer..",
-                  "> AWS, Docker..",
-                  "I looking first oportunity..."
-
-
-                ]}
-                typingSpeed={75}
-                pauseDuration={1500}
-                showCursor={true}
-                cursorCharacter="|"
-                className="font-mono"
-              />
-            </div>
-
-            {/* Botões */}
-            <div className="">
-              <CardContact />
-            </div>
-           
           </div>
 
-          {/* Coluna direita - Avatar */}
-          <div className="flex-shrink-0  order-1 md:order-2">
-            <LoGOTIP/>  
+          <div className="text-lg text-zinc-400 md:text-xl">
+            <TextType
+              text={[
+                "> Full Stack Developer",
+                "> React & Next.js",
+                "> Node.js & TypeScript",
+                "> AWS & Docker",
+                "> Em aprendizado constante...",
+              ]}
+              typingSpeed={60}
+              pauseDuration={2000}
+              showCursor={true}
+              cursorCharacter="|"
+              className="font-mono"
+            />
           </div>
 
-        </div>
+          <p className="text-zinc-500 text-sm md:text-base max-w-lg leading-relaxed">
+            Desenvolvedor apaixonado por criar soluções escaláveis e performáticas.
+            Atualmente trabalhando no <span className="text-blue-400 font-medium">ISGH - Hospital Regional de Itapipoca</span> e 
+            em constante aprendizado de novas tecnologias.
+          </p>
+
+          {/* Current status */}
+          <div className="flex items-center gap-2 text-sm">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
+            </span>
+            <span className="text-zinc-400">Trabalhando no ISGH | Aberto a novas oportunidades</span>
+          </div>
+
+          <div className="pt-2">
+            <CardContact />
+          </div>
+        </AnimatedSection>
+
+        {/* Avatar */}
+        <AnimatedSection direction="right" className="flex-shrink-0">
+          <LoGOTIP />
+        </AnimatedSection>
       </div>
-    </main>
-    </>
+    </section>
   );
 }
